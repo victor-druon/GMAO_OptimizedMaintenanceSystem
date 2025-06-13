@@ -1,0 +1,204 @@
+/* ===============================
+   Titles and Sections
+================================= */
+.production-title,
+.production-line h2 {
+  margin: 20px 0 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+  border-left: 4px solid #3498db;
+  padding-left: 10px;
+}
+
+/* ===============================
+   Production Line Container
+================================= */
+.production-line {
+  background: white;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ===============================
+   Add Machine Button
+================================= */
+.add-machine {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-machine:hover {
+  background-color: #27ae60;
+}
+
+/* ===============================
+   Machine Table Layout
+================================= */
+.machine-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.machine-table th,
+.machine-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.machine-table th {
+  background-color: #ecf0f1;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.machine-table tr:hover {
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
+
+/* ===============================
+   Machine Status Colors
+================================= */
+.status-ok {
+  color: #27ae60;
+  font-weight: bold;
+}
+.status-maintenance {
+  color: #f39c12;
+  font-weight: bold;
+}
+.status-failure {
+  color: #e74c3c;
+  font-weight: bold;
+}
+.status-unknown {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* ===============================
+   Machine Action Buttons
+================================= */
+.machine-actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.machine-actions img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+}
+
+.machine-actions img:hover {
+  opacity: 1;
+}
+
+/* ===============================
+   Dialog Boxes (Modal)
+================================= */
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background: white;
+  z-index: 1000;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+dialog input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* ===============================
+   Machine Detail Sidebar (Right)
+================================= */
+#machine-details {
+  width: 280px;
+  background-color: #ffffff;
+  border-left: 2px solid #ecf0f1;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  display: none;
+}
+
+#machine-details.active {
+  display: block;
+}
+
+#machine-details h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+#machine-details p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#machine-details strong {
+  color: #2c3e50;
+}

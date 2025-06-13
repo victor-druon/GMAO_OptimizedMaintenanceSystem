@@ -1,0 +1,38 @@
+/* ===============================
+   Sidebar Navigation
+================================= */
+
+#sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #1f2d3d;
+  color: white;
+  padding: 30px 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#sidebar a {
+  display: block;
+  color: #cfd8dc;
+  text-decoration: none;
+  margin: 15px 0;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+#sidebar a:hover {
+  color: white;
+}
+
+#sidebar a.active {
+  font-weight: bold;
+  background-color: #ddd;
+  border-left: 4px solid #333;
+}

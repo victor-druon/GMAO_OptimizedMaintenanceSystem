@@ -1,0 +1,1 @@
+{"action":"delete_machine","id_machine":"zd"}

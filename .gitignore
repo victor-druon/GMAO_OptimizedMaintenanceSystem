@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+node_modules/ 

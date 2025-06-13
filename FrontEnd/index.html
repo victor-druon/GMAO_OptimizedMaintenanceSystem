@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Center</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/dialogs.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <script src="dist/bundle.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Modals -->
+    <div id="dialogs">
+      <!-- Dialog: Add Machine -->
+      <dialog id="dialog-add-machine">
+        <form id="form-add-machine">
+          <h3>Add Machine</h3>
+
+          <label for="dialog-machine-id">Machine ID:</label>
+          <input type="text" id="dialog-machine-id" required />
+
+          <label for="dialog-machine-name">Machine Name:</label>
+          <input type="text" id="dialog-machine-name" required />
+
+          <label for="dialog-machine-status">Machine Status:</label>
+          <select id="dialog-machine-status" required>
+            <option value="En fonctionnement">En fonctionnement</option>
+            <option value="En maintenance">En maintenance</option>
+            <option value="En panne">En panne</option>
+          </select>
+
+          <label for="dialog-line-id">Production Line:</label>
+          <select id="dialog-line-id" required></select>
+
+          <menu>
+            <button type="submit">Add</button>
+            <button type="button" class="cancel-dialog">Cancel</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <!-- Dialog: Delete Machine -->
+      <dialog id="dialog-delete-machine">
+        <form id="form-delete-machine">
+          <h3>Delete Machine</h3>
+          <p>Are you sure you want to delete the machine:</p>
+          <p>
+            <strong><span id="machine-to-delete-name"></span></strong>
+          </p>
+          <input type="hidden" id="machine-to-delete-id" />
+          <menu>
+            <button type="button" id="confirm-deletion" class="btn-danger">
+              Delete
+            </button>
+            <button type="button" class="cancel-dialog">Cancel</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <!-- Dialog: Modify Machine -->
+      <dialog id="dialog-modify-machine">
+        <form id="form-modify-machine">
+          <h3>Modify Machine</h3>
+
+          <input type="hidden" id="modify-id" />
+
+          <label for="modify-name">Machine Name:</label>
+          <input type="text" id="modify-name" required />
+
+          <label for="modify-status">Status:</label>
+          <select id="modify-status" required>
+            <option value="En fonctionnement">En fonctionnement</option>
+            <option value="En maintenance">En maintenance</option>
+            <option value="En panne">En panne</option>
+          </select>
+
+          <label for="modify-chain">Production Line:</label>
+          <select id="modify-chain" required></select>
+
+          <menu>
+            <button type="submit">Save</button>
+            <button type="button" class="cancel-dialog">Cancel</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <!-- Dialog: Machine Info -->
+      <dialog id="dialog-machine-info">
+        <!-- ... -->
+      </dialog>
+    </div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar"></nav>
+
+    <!-- Main Content (SPA view will go here) -->
+    <main id="main-content"></main>
+  </body>
+</html>

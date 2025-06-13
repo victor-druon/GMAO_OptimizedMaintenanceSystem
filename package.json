@@ -1,0 +1,15 @@
+{
+  "name": "gmao_optimizedmaintenancesystem",
+  "version": "1.0.0",
+  "description": "A quick project about a GMAO live webpage using C and VBA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.25.5"
+  }
+}

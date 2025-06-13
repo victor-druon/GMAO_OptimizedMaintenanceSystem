@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client WebSocket - GMAO</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .chaine {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+      .machine {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Client WebSocket</h1>
+
+    <input
+      type="text"
+      id="messageInput"
+      placeholder='Ex: {"action":"lister"}'
+    />
+    <button id="sendMessage">Envoyer</button>
+
+    <div id="contenu"></div>
+
+    <script>
+      const ws = new WebSocket("ws://localhost:9001");
+
+      ws.onmessage = (event) => {
+        console.log("Donnée reçue brue : ", JSON.stringify(event.data));
+        const contenu = document.getElementById("contenu");
+        contenu.innerHTML = ""; // Réinitialise l'affichage
+
+        try {
+          const data = JSON.parse(event.data);
+          if (!data.chaines) throw new Error("Pas de champ 'chaines'");
+
+          data.chaines.forEach((chaine) => {
+            const divChaine = document.createElement("div");
+            divChaine.className = "chaine";
+            divChaine.innerHTML = `<h2>${chaine.nom_chaine} (ID: ${chaine.id_chaine})</h2>`;
+
+            if (Array.isArray(chaine.machines) && chaine.machines.length > 0) {
+              chaine.machines.forEach((machine) => {
+                const divMachine = document.createElement("div");
+                divMachine.className = "machine";
+                divMachine.textContent = `Machine: ${machine.nom_machine} (ID: ${machine.id_machine}) - État: ${machine.etat_machine}`;
+                divChaine.appendChild(divMachine);
+              });
+            } else {
+              const aucun = document.createElement("div");
+              aucun.className = "machine";
+              aucun.textContent = "Aucune machine.";
+              divChaine.appendChild(aucun);
+            }
+
+            contenu.appendChild(divChaine);
+          });
+        } catch (e) {
+          contenu.textContent =
+            "Erreur lors de la lecture du JSON : " + e.message;
+          console.error("JSON invalide :", event.data);
+        }
+      };
+
+      document.getElementById("sendMessage").onclick = () => {
+        const input = document.getElementById("messageInput");
+        const message = input.value;
+        ws.send(message);
+        input.value = "";
+      };
+    </script>
+  </body>
+</html>
