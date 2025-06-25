@@ -1,6 +1,8 @@
 id_machine,name_machine,id_chain,status_machine
 M6,Robot 1,C2,En fonctionnement
-785,LE CACA DE VANCESLAS,C1,En fonctionnement
+785,machine turbo,C1,En fonctionnement
 78,enzo is a liar,C1,En maintenance
 test,de,C3,En panne
 d,d,C1,En panne
+ok,ok,C3,En panne
+77,s,C2,En fonctionnement

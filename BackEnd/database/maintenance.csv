@@ -1,1 +1,3 @@
 id_maintenance,id_machine,type,description,date,status_maintenance,technician
+z,M6,corrective,lalalal,2025-06-28,Terminé,z
+a,M6,préventive,aaa,2025-06-13,En cours,a

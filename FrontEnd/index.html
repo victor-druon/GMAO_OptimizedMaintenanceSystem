@@ -70,8 +70,8 @@
           <label for="modify-name">Machine Name:</label>
           <input type="text" id="modify-name" required />
 
-          <label for="modify-status">Status:</label>
-          <select id="modify-status" required>
+          <label for="modify-status-machine">Status:</label>
+          <select id="modify-status-machine" required>
             <option value="En fonctionnement">En fonctionnement</option>
             <option value="En maintenance">En maintenance</option>
             <option value="En panne">En panne</option>
@@ -87,11 +87,105 @@
         </form>
       </dialog>
 
-      <!-- Dialog: Machine Info -->
-      <dialog id="dialog-machine-info">
-        <!-- ... -->
-      </dialog>
-    </div>
+      <!-- Dialog: Add Maintenance -->
+<dialog id="dialog-add-maintenance">
+  <form method="dialog" id="form-add-maintenance">
+    <h3>Ajouter une maintenance</h3>
+
+    <label for="add-maintenance-id">ID Maintenance :</label>
+    <input type="text" id="add-maintenance-id" required />
+
+    <label for="add-machine-id">Machine :</label>
+    <select id="add-machine-id" required></select>
+
+    <label for="add-type">Type :</label>
+    <select id="add-type" required>
+      <option value="corrective">Corrective</option>
+      <option value="préventive">Préventive</option>
+    </select>
+
+    <label for="add-description">Description :</label>
+    <input type="text" id="add-description" required />
+
+    <label for="add-date">Date :</label>
+    <input type="date" id="add-date" required />
+
+    <label for="add-status">Statut :</label>
+    <select id="add-status" required>
+      <option value="En attente">En attente</option>
+      <option value="En cours">En cours</option>
+      <option value="Terminé">Terminé</option>
+    </select>
+
+    <label for="add-technician">Technicien :</label>
+    <input list="technician-list" id="add-technician" name="technician" required />
+
+    <menu>
+      <button type="submit">Ajouter</button>
+      <button type="button" class="cancel-dialog">Annuler</button>
+    </menu>
+  </form>
+</dialog>
+
+<!-- Dialog: Modify Maintenance -->
+<dialog id="dialog-modify-maintenance">
+  <form method="dialog" id="form-modify-maintenance">
+    <h3>Modifier une maintenance</h3>
+
+    <input type="hidden" id="modify-maintenance-id" />
+
+    <label for="modify-machine-id">Machine :</label>
+    <select id="modify-machine-id" required></select>
+
+    <label for="modify-type">Type :</label>
+    <select id="modify-type" required>
+      <option value="corrective">Corrective</option>
+      <option value="préventive">Préventive</option>
+    </select>
+
+    <label for="modify-description">Description :</label>
+    <input type="text" id="modify-description" required />
+
+    <label for="modify-date">Date :</label>
+    <input type="date" id="modify-date" required />
+
+    <label for="modify-status-maintenance">Statut :</label>
+    <select id="modify-status-maintenance" required>
+      <option value="En attente">En attente</option>
+      <option value="En cours">En cours</option>
+      <option value="Terminé">Terminé</option>
+    </select>
+
+    <label for="modify-technician">Technicien :</label>
+    <input list="technician-list" id="modify-technician" required />
+
+    <menu>
+      <button type="submit">Enregistrer</button>
+      <button type="button" class="cancel-dialog">Annuler</button>
+    </menu>
+  </form>
+</dialog>
+
+<!-- Dialog: Delete Maintenance -->
+<dialog id="dialog-delete-maintenance">
+  <form method="dialog" id="form-delete-maintenance">
+    <h3>Supprimer la maintenance</h3>
+    <p>
+      Êtes-vous sûr de vouloir supprimer la maintenance :
+      <strong><span id="delete-maintenance-name"></span></strong> ?
+    </p>
+    <input type="hidden" id="delete-maintenance-id" />
+    <menu>
+      <button type="button" id="confirm-delete-maintenance" class="btn-danger">
+        Supprimer
+      </button>
+      <button type="button" class="cancel-dialog">Annuler</button>
+    </menu>
+  </form>
+</dialog>
+
+
+<datalist id="technician-list"></datalist>
 
     <!-- Sidebar -->
     <nav id="sidebar"></nav>

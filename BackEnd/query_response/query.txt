@@ -1,1 +1,1 @@
-{"action":"delete_machine","id_machine":"zd"}
+{"action":"modify_maintenance","id_maintenance":"z","id_machine":"M6","type":"corrective","description":"lalalal","date":"2025-06-28","status_maintenance":"Terminé","technician":"z"}
